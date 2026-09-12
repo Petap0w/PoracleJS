@@ -16,7 +16,8 @@ class Translator {
 
 	// eslint-disable-next-line class-methods-use-this
 	format(str, ...args) {
-		let newStr = str
+		// Unknown format keys (e.g. a new megaName tempEvoId) fall back to the first argument
+		let newStr = str ?? '{0}'
 		let i = args.length
 		while (i--) {
 			newStr = newStr.replace(new RegExp(`\\{${i}\\}`, 'gm'), args[i])

@@ -217,7 +217,7 @@ class Raid extends Controller {
 				data.formId = monster.form.id
 				data.formNameEng = monster.form.name
 				data.genderDataEng = this.GameData.utilData.genders[data.gender]
-				data.evolutionNameEng = data.evolution ? this.GameData.utilData.evolution[data.evolution].name : ''
+				data.evolutionNameEng = data.evolution ? (this.GameData.utilData.evolution[data.evolution]?.name ?? '') : ''
 				data.tth = moment.preciseDiff(Date.now(), data.end * 1000, true)
 				data.formname = data.formNameEng // deprecated
 				data.evolutionname = data.evolutionNameEng // deprecated
